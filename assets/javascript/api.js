@@ -19,9 +19,11 @@ function renderButtons(){
 
 function displayGifs (){
 
-
-	var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+animalChosen;  
 	var animalChosen = $(this).attr("data-name");
+	var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+animalChosen;  
+	
+
+	console.log(queryURL);
 
 	$.ajax({
 
