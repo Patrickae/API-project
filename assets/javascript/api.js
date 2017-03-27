@@ -19,16 +19,19 @@ function renderButtons(){
 
 function displayGifs (){
 
+
+
 	var animalChosen = $(this).attr("data-name");
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q="+animalChosen+"&api_key=dc6zaTOxFJmzC&tag=&limit=10"  
 	
+	$("#gif-info").empty();
 
 	console.log(queryURL);
 
 	$.ajax({
 
-			url: queryURL,
-			method: "GET"
+		url: queryURL,
+		method: "GET"
 	}).done(function(response){
 
 		console.log(response);
@@ -44,20 +47,33 @@ function displayGifs (){
 
 			var newImgStill = response.data[i].images.fixed_width_still.url;
 			var newImgAnimate = response.data[i].images.fixed_width.url;
+			var rating = response.data[i].rating;
 
-			imgDiv = $("<img>");
+			console.log(rating);
+
+
+				imgDiv = $("<img>");
+				
+				imgDiv.attr("src", newImgStill);
+				imgDiv.attr("data-still", newImgStill);
+				imgDiv.attr("data-animate", newImgAnimate);
+				imgDiv.attr("data-state", "still");
+				imgDiv.attr("src", newImgStill);
+				imgDiv.addClass("gif img img-responsive");
+				
+
+				
+
+				newDiv.html(imgDiv);
+
+				newDiv.append("Rating: " + rating);
+
+
 			
-			imgDiv.attr("src", newImgStill);
-			imgDiv.attr("data-still", newImgStill);
-			imgDiv.attr("data-animate", newImgAnimate);
-			imgDiv.attr("data-state", "still");
 
-			imgDiv.attr("src", newImgStill);
-			imgDiv.addClass("gif");
+			$("#gif-info").append(newDiv);
 
-			newDiv.html(imgDiv);
-
-		$("#gif-info").prepend(newDiv);
+			// ().css({"display": "inline"});
 
 		}
 
@@ -97,15 +113,15 @@ $(document).on("click",".gif", function() {
       // Else set src to the data-still value
       if (state === "still") {
 //        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("src", $(this).data('animate'));
-        $(this).attr("data-state", "animate");
-      } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-      }
+$(this).attr("src", $(this).data('animate'));
+$(this).attr("data-state", "animate");
+} else {
+	$(this).attr("src", $(this).attr("data-still"));
+	$(this).attr("data-state", "still");
+}
 
-      console.log("clicked")
-    });
+console.log("clicked")
+});
 
 
 
