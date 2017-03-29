@@ -1,11 +1,10 @@
 .animal{ margin:10px 20px;}
 img{ border: 2px solid black;
-		margin: 5px; 
-		}
+		margin: 5px;}
 
 #gif { margin:10px; 
 		border:1px solid black;
-		display:inline-block;
-		}
+		display:inline-block;}
+img { height:500px;}
 
-img:hover{ cursor:pointer; }
+img:hover{ cursor:pointer;}
