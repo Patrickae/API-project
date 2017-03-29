@@ -2,3 +2,10 @@
 img{ border: 2px solid black;
 		margin: 5px; 
 		}
+
+#gif { margin:10px; 
+		border:1px solid black;
+		display:inline-block;
+		}
+
+img:hover{ cursor:pointer; }
