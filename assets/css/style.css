@@ -5,6 +5,7 @@ img{ border: 2px solid black;
 #gif { margin:10px; 
 		border:1px solid black;
 		display:inline-block;}
-img { height:500px;}
 
-img:hover{ cursor:pointer;}
+
+
+img:hover{ cursor:pointer; }
