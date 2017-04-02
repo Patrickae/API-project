@@ -23,7 +23,7 @@ function displayGifs (){
 //selects the data name attribute of the button chosen
 	var animalChosen = $(this).attr("data-name");
 //saves the URL as a variable. inserts the data name that was chosen above. Also 10 options and raing up to pg
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q="+animalChosen+"&api_key=dc6zaTOxFJmzC&tag=&limit=10&rating=pg";  
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q="+animalChosen+"&api_key=dc6zaTOxFJmzC&tag=&limit=10&rating=pg";  
 //empty the gif info div
 	$("#gif-info").empty();
 
